@@ -22,13 +22,11 @@
         <action
             android:id="@+id/action_gameFragment_to_gameOverFragment"
             app:destination="@id/gameOverFragment"
-            app:popUpTo="@id/titleFragment"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/titleFragment" />
         <action
             android:id="@+id/action_gameFragment_to_gameWonFragment"
             app:destination="@id/gameWonFragment"
-            app:popUpTo="@id/titleFragment"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/titleFragment" />
         <argument
             android:name="numPreguntas"
             app:argType="integer" />
@@ -55,6 +53,12 @@
             android:id="@+id/action_gameWonFragment_to_gameFragment"
             app:destination="@id/gameFragment"
             app:popUpTo="@id/titleFragment" />
+        <argument
+            android:name="numAciertos"
+            app:argType="integer" />
+        <argument
+            android:name="numPreguntas"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
