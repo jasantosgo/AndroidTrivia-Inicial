@@ -17,12 +17,11 @@
 package com.example.android.navigation
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.android.navigation.databinding.FragmentGameWonBinding
 
 
@@ -37,6 +36,21 @@ class GameWonFragment : Fragment() {
             it.findNavController().navigate(R.id.action_gameWonFragment_to_gameFragment)
         }
 
+        val args = GameWonFragmentArgs.fromBundle(requireArguments())
+        val numAciertos = args.numAciertos
+        val numPreguntas = args.numPreguntas
+        binding.tvPuntuacion.text = "Enhorabuena, has acertado: ${numAciertos} de ${numPreguntas} preguntas."
+
+        setHasOptionsMenu(true)
+
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.winner_menu, menu)
+        //if(getShareIntent().resolveActivity(requireActivity().packageManager)==null){
+          //  menu.findItem(R.id.share).isVisible = false
+        //}
     }
 }

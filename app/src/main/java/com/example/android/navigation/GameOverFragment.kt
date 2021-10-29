@@ -36,6 +36,11 @@ class GameOverFragment : Fragment() {
             it.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
         }
 
+        val args = GameWonFragmentArgs.fromBundle(requireArguments())
+        val numAciertos = args.numAciertos
+        val numPreguntas = args.numPreguntas
+        binding.tvAciertos.text = "Lo siento, solo has acertado: ${numAciertos} de ${numPreguntas} preguntas."
+
         return binding.root
     }
 }
