@@ -1,2 +1,2 @@
 # AndroidTrivia-Final
- Resultado final despues de la practica.
+ Punto de partida de la práctica.
